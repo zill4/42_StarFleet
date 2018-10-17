@@ -6,7 +6,7 @@
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/15 20:16:44 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/10/16 22:15:50 by jcrisp           ###   ########.fr       */
+/*   Updated: 2018/10/16 22:51:09 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -70,10 +70,17 @@ void	pop(struct emnum *head)
 	temp_old->next = NULL;
 	free(temp);
 }
-	
+int	isAscii(char c)
+{
+	if (c >= '!' && c <= '~')
+		return (1);
+	else
+		return (0);
+}
 int main(int argc, char** argv)
 {
-	
+	char buf;
+	char* buffy;
 	if (argc > 1)
 	{
 		printf("Hello World\n");
@@ -88,6 +95,17 @@ int main(int argc, char** argv)
 		push(head, '2');
 		push(head, '3');
 		pop(head);		
+		print_list(head);
+
+
+		read(0, &buf, 3);
+		buffy = &buf;
+		while(isAscii(*buffy))
+		{
+
+			push(head, *buffy);
+			buffy++;
+		}
 		print_list(head);
 	}	
 	return (0);
