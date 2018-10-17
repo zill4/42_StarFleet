@@ -6,7 +6,7 @@
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/15 20:16:44 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/10/17 11:04:04 by jcrisp           ###   ########.fr       */
+/*   Updated: 2018/10/17 14:22:56 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -144,6 +144,7 @@ int main(int argc, char** argv)
 		int x = 0;
 		int b_size = 0;
 		int z;
+
 		while(base[b_size])
 			b_size++;
 		while(a != base[i])
@@ -160,13 +161,13 @@ int main(int argc, char** argv)
 		struct emnum *temp;
 		head = (struct emnum*)malloc(sizeof(struct emnum));
 
-		
+
 		head->next = NULL;
 		temp = head;
 		push(head, '1');
 		push(head, '2');
 		push(head, '3');
-		pop(head);		
+		pop(head);
 		print_list(head);
 
 	//	char base[10] = {'Q','W','E','R','T','Y','U','I','O','P'};
@@ -176,7 +177,6 @@ int main(int argc, char** argv)
 	//	char cx = base[1];
 	//	char b = ((a % 'Q') % 10)+ 'Q';
 	//	a = ((a % 'Q') / 10) + 'Q';
-		
 	}	
 	return (0);
 }
