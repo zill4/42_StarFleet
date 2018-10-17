@@ -6,7 +6,7 @@
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/16 18:57:12 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/10/16 18:59:09 by jcrisp           ###   ########.fr       */
+/*   Updated: 2018/10/17 08:58:31 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int main()
        m=1;    // initializes digit counter
 
        temp = 0; //Initializes carry variable to 0.
-       for(i=1;i<=n;i++)
+        i = 1;
+	   for(i=1;i<=n;i++)
        {
             for(j=0;j<m;j++)
             {
