@@ -6,7 +6,7 @@
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/15 18:29:39 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/10/15 19:29:13 by jcrisp           ###   ########.fr       */
+/*   Updated: 2018/10/17 23:10:07 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,30 @@
 # define BISTRO_H
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
-typedef struct 	l_num
+typedef struct 	 emnum
 {
-	char	data;
-	struct 		n_num *next;
-}				n_num; 
+	char	num;
+	struct 	emnum *next;
+};	
+
+typedef struct	n_list
+{
+	struct emnum *head;
+	struct n_list *next;
+};
+
+int		basePos(char c, char* base);
+int		ft_atoi(char* number);
+int		ft_isdigit(char n);
+int		ft_strsize(char* str);
+int		isAscii(char c);
+struct emnum	*init_emnum(struct emnum *lol);
+int		isAscii(char c);
+void	emnumPush(struct emnum *head, char data);
+void	print_list(struct emnum *head);
+void	emnumPop(struct emnum *head);
+
 
 #endif 

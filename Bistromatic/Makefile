@@ -6,14 +6,15 @@
 #    By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/15 18:57:49 by jcrisp            #+#    #+#              #
-#    Updated: 2018/10/15 19:45:09 by jcrisp           ###   ########.fr        #
+#    Updated: 2018/10/17 23:39:26 by jcrisp           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 NAME = bistro.a
 CFLAGS =  -Wall -Wextra -Werror
-FILES = ./bistromatic.c 
+FILES =  ./emnumPop.c ./emnumPrint.c ./emnumPush.c ./ft_atoi.c ./ft_isascii.c ./ft_isdigit.c ./ft_strsize.c \
+		./initEmnum.c 
 
 OBJ = $(FILES:%.c=%.o)
 

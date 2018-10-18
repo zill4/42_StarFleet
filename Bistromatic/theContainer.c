@@ -6,126 +6,10 @@
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/15 20:16:44 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/10/17 20:35:37 by jcrisp           ###   ########.fr       */
+/*   Updated: 2018/10/17 23:06:38 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-
-struct emnum
-{
-	char num;
-	struct emnum *next;
-};
-
-struct n_list
-{
-	struct emnum *head;
-    struct n_list *next;
-};
-struct emnum	*init_emnum(struct emnum *lol)
-{
-	if (!(lol = (struct emnum*)malloc(sizeof(struct emnum))))
-		return (NULL);
-	lol->next = NULL;
-	lol->num = '\0';
-	return (lol);
-}
-
-void	push(struct emnum *head, char data)
-{
-	struct emnum *temp;
-
-	temp = head;
-	while(temp->next != NULL)
-		temp = temp->next;
-	temp->next = init_emnum(temp->next);
-	temp->next->num = data;
-}
-
-void	print_list(struct emnum *head)
-{
-	struct emnum *temp;
-	
-	temp = head;
-	while(temp->next != NULL)
-	{
-		printf("%c\n",temp->num);
-		temp = temp->next;
-	}
-	printf("%c\n",temp->num);
-}
-
-void	pop(struct emnum *head)
-{
-	struct emnum *temp;
-	struct emnum *temp_old;
-	temp = head;
-
-	while (temp->next != NULL){
-		temp_old = temp;
-		temp = temp->next;
-	}
-	temp_old->next = NULL;
-	free(temp);
-}
-int	isAscii(char c)
-{
-	if (c >= '!' && c <= '~')
-		return (1);
-	else
-		return (0);
-}
-int	ft_strsize(char* str)
-{
-	int i;
-
-	i = 0;
-	while(str[i])
-		i++;
-	return (i);
-}
-int ft_isdigit(char n)
-{
-	if (n >= '0' && n <= '9')
-		return (1);
-	else
-		return (0);
-}
-
-int ft_atoi(char* number)
-{
-	int size;
-	int sign;
-	int i;
-	int value;
-
-	value = 0;
-	i = 1;
-	sign = 1;
-	size = ft_strsize(number);
-	if (number[0] == '-')
-		sign = -1;
-
-	while(ft_isdigit(number[--size]))
-	{
-		value += (number[size] - '0') * i;
-		printf("The value is: %d\n", value);
-		i *= 10;
-	}
-	return (value * sign);
-}
-
-int		basePos(char c, char*base)
-{
-	int i;
-
-	i = 0;
-	while(c != base[i])
-		i++;
-	return (i);
-}
+#include "bistro.h"
 
 void	printCalc(int sum, char* base, int baseSize)
 {
@@ -148,7 +32,7 @@ int main(int argc, char** argv)
 	//First argument is base second is size
 	
 	if (argc == 3)
-i	{
+	{
 		/**************************************************/
 		/* 			Base assignment & Stream Size		  */
 		/**************************************************/
