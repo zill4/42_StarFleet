@@ -6,7 +6,7 @@
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/15 20:16:44 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/10/17 14:22:56 by jcrisp           ###   ########.fr       */
+/*   Updated: 2018/10/17 20:35:37 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -117,6 +117,28 @@ int ft_atoi(char* number)
 	return (value * sign);
 }
 
+int		basePos(char c, char*base)
+{
+	int i;
+
+	i = 0;
+	while(c != base[i])
+		i++;
+	return (i);
+}
+
+void	printCalc(int sum, char* base, int baseSize)
+{
+	if (sum > baseSize - 1)
+	{
+		printCalc( sum / baseSize, base, baseSize);
+		printf("%c",base[sum % baseSize]);
+	}
+	else
+		printf("%c",base[sum]);
+}
+
+
 int main(int argc, char** argv)
 {
 	char buf;
@@ -126,9 +148,7 @@ int main(int argc, char** argv)
 	//First argument is base second is size
 	
 	if (argc == 3)
-	{
-		printf("Hello World\n");
-
+i	{
 		/**************************************************/
 		/* 			Base assignment & Stream Size		  */
 		/**************************************************/
@@ -147,13 +167,16 @@ int main(int argc, char** argv)
 
 		while(base[b_size])
 			b_size++;
-		while(a != base[i])
-			i++;
-		while(b != base[x])
-			x++;
-		z = i + x;
+
+		x = basePos(b, base);
+		i = basePos(a, base);
+
+		z = i * x;
+		printCalc(z,base,b_size);
+		printf("\n");
+
 		char bx = base[z%b_size];
-	
+
 		printf("THE BX is: %c\n",bx);
 
 		struct n_list *list;
@@ -169,14 +192,8 @@ int main(int argc, char** argv)
 		push(head, '3');
 		pop(head);
 		print_list(head);
+		
 
-	//	char base[10] = {'Q','W','E','R','T','Y','U','I','O','P'};
-	//	char a = 'P' + 'P' - 'Q';
-	//	int ax = 9 + 9;
-	//	char bx = base[ax%10];
-	//	char cx = base[1];
-	//	char b = ((a % 'Q') % 10)+ 'Q';
-	//	a = ((a % 'Q') / 10) + 'Q';
 	}	
 	return (0);
 }
