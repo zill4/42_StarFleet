@@ -6,7 +6,7 @@
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/15 18:29:39 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/10/17 23:10:07 by jcrisp           ###   ########.fr       */
+/*   Updated: 2018/10/18 17:18:17 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-typedef struct 	 emnum
+struct 	 emnum
 {
 	char	num;
 	struct 	emnum *next;
 };	
 
-typedef struct	n_list
+struct	n_list
 {
 	struct emnum *head;
 	struct n_list *next;

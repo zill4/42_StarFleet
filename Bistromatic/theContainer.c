@@ -6,7 +6,7 @@
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/15 20:16:44 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/10/17 23:06:38 by jcrisp           ###   ########.fr       */
+/*   Updated: 2018/10/18 18:52:15 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "bistro.h"
@@ -52,17 +52,17 @@ int main(int argc, char** argv)
 		while(base[b_size])
 			b_size++;
 
-		x = basePos(b, base);
-		i = basePos(a, base);
+//		x = basePos(b, base);
+//		i = basePos(a, base);
 
-		z = i * x;
-		printCalc(z,base,b_size);
-		printf("\n");
+//		z = i * x;
+//		printCalc(z,base,b_size);
+//		printf("\n");
 
-		char bx = base[z%b_size];
+//		char bx = base[z%b_size];
 
-		printf("THE BX is: %c\n",bx);
-
+//		printf("THE BX is: %c\n",bx);
+	/*
 		struct n_list *list;
 		struct emnum *head;
 		struct emnum *temp;
@@ -71,13 +71,12 @@ int main(int argc, char** argv)
 
 		head->next = NULL;
 		temp = head;
-		push(head, '1');
-		push(head, '2');
-		push(head, '3');
-		pop(head);
+		emnumPush(head, '1');
+		emnumPush(head, '2');
+		emnumPush(head, '3');
+		emnumPop(head);
 		print_list(head);
-		
-
+	*/
 	}	
 	return (0);
 }
