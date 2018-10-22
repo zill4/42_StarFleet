@@ -27,7 +27,10 @@ int main(int argc, char** argv)
 	char buf;
 	char* buffy;
 	char* base = (char*)malloc(95);
-	int	 streamSize;
+	int	streamSize;
+	int	strPos;
+	char* 	numeralBuf;
+	int	iOp;
 	//First argument is base second is size
 	
 	if (argc == 3)
@@ -42,9 +45,29 @@ int main(int argc, char** argv)
 		write(1,&buf, streamSize);
 		buffy = (char *)malloc(streamSize);
 		buffy = &buf;
-		
+		strPos = 0;
+		//Allocate space for numeral buffer
+		numeralBuf = (char *)malloc(streamSize);
+		struct emnum listNumbers;
 		char a = buffy[0];
 		char b = buffy[1];
+		iOp = 0;
+		// Sample input: "201*42"
+		while (strPos < streamSize)
+		{
+			if (ft_isdigit(buffy[strPos]))
+			{
+				// If the buffer is at a numeral it will add to the array.
+				numeralBuf[iOp] = buffy[strPos];
+				iOp++;
+			}
+			else if(ft_isOp(buffy[strPos]))
+			{
+				// If the buffer is at an operator, the array will be copied to list.
+				// The the operator will be added to an array, once the string is read the 
+				// numbers will be evaulated through the array.
+				
+
 		int i = 0;
 		int x = 0;
 		int b_size = 0;
@@ -63,6 +86,7 @@ int main(int argc, char** argv)
 		z = i * x;
 		printCalc(z,base,b_size);
 		printf("\n");
+// I want to add each element into an array and then into a list.
 
 //		char bx = base[z%b_size];
 
