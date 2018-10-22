@@ -6,7 +6,7 @@
 #    By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/15 18:57:49 by jcrisp            #+#    #+#              #
-#    Updated: 2018/10/18 17:25:17 by jcrisp           ###   ########.fr        #
+#    Updated: 2018/10/21 14:47:58 by jcrisp           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,10 +26,10 @@ $(NAME):
 all: $(NAME)
 
 clean:
-	rm -f$(OBJ)
+	rm -f $(OBJ)
 
 fclean: clean
-	rm -f$(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 

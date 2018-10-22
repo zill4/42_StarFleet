@@ -6,7 +6,7 @@
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/15 18:29:39 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/10/18 17:18:17 by jcrisp           ###   ########.fr       */
+/*   Updated: 2018/10/21 15:24:13 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 struct 	 emnum
 {
-	char	num;
+	char*	num;
 	struct 	emnum *next;
 };	
 
@@ -35,7 +35,7 @@ int		ft_strsize(char* str);
 int		isAscii(char c);
 struct emnum	*init_emnum(struct emnum *lol);
 int		isAscii(char c);
-void	emnumPush(struct emnum *head, char data);
+void	emnumPush(struct emnum *head, char* data);
 void	print_list(struct emnum *head);
 void	emnumPop(struct emnum *head);
 

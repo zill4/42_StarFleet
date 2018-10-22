@@ -6,7 +6,7 @@
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/17 23:05:12 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/10/17 23:05:46 by jcrisp           ###   ########.fr       */
+/*   Updated: 2018/10/21 14:51:31 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@ int		basePos(char c, char* base)
 	int i;
 
 	i = 0;
-	while (c != base[i])
+	if (!*base)
+		return (0);
+
+	while (c != base[i] || base[i] == '\0')
 		i++;
+
 	return (i);
 }

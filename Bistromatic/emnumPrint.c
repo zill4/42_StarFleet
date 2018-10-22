@@ -6,7 +6,7 @@
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/17 23:03:49 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/10/18 17:17:10 by jcrisp           ###   ########.fr       */
+/*   Updated: 2018/10/21 15:23:45 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void		print_list(struct emnum *head)
 	temp = head;
 	while (temp->next != NULL)
 	{
-		printf("%c\n", temp->num);
+		printf("%s\n", temp->num);
 		temp = temp->next;
 	}
-	printf("%c\n",temp->num);
+	printf("%s\n",temp->num);
 }

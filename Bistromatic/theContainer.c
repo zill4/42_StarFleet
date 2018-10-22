@@ -6,7 +6,7 @@
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/15 20:16:44 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/10/18 18:52:15 by jcrisp           ###   ########.fr       */
+/*   Updated: 2018/10/21 15:10:44 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "bistro.h"
@@ -21,7 +21,6 @@ void	printCalc(int sum, char* base, int baseSize)
 	else
 		printf("%c",base[sum]);
 }
-
 
 int main(int argc, char** argv)
 {
@@ -38,7 +37,9 @@ int main(int argc, char** argv)
 		/**************************************************/
 		base = argv[1]; // Limited to 4096.
 		streamSize = ft_atoi(argv[2]); // should be limited to 4096
+		printf("The culprit: %d\n",streamSize);
 		read(0, &buf, streamSize);
+		write(1,&buf, streamSize);
 		buffy = (char *)malloc(streamSize);
 		buffy = &buf;
 		
@@ -51,13 +52,17 @@ int main(int argc, char** argv)
 
 		while(base[b_size])
 			b_size++;
+		printf("The base size is: %d\n",b_size);
+		printf("Buffy is %s\n",buffy);
+		printf("The base  is: %s\n", base);
+		printf("The base b is: %c\n",b);
+		printf("The base a is: %c\n",a);
+		x = basePos(b, base);
+		i = basePos(a, base);
 
-//		x = basePos(b, base);
-//		i = basePos(a, base);
-
-//		z = i * x;
-//		printCalc(z,base,b_size);
-//		printf("\n");
+		z = i * x;
+		printCalc(z,base,b_size);
+		printf("\n");
 
 //		char bx = base[z%b_size];
 

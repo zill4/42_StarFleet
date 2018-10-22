@@ -6,13 +6,13 @@
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/17 21:01:46 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/10/17 21:36:57 by jcrisp           ###   ########.fr       */
+/*   Updated: 2018/10/21 15:22:07 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bistro.h"
 
-void	emnumPush(struct emnum *head, char data)
+void	emnumPush(struct emnum *head, char* data)
 {
 	struct emnum *temp;
 
