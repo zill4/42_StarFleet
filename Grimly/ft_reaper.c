@@ -6,7 +6,7 @@
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/22 14:30:40 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/10/24 16:11:35 by jcrisp           ###   ########.fr       */
+/*   Updated: 2018/10/24 16:23:42 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ int*	setInfo(char** dim, char* info, char* fileName)
 			i = 0;
 			x++;
 		}
-		if (ft_isdigit(buf))
+		if (x < 2)
 			dimXY[x][i++] = buf;			
-		else if(!ft_isdigit(buf))
+		else
 			info[p++] = buf; 
 	}
 	return (setDimensions(dimXY));
@@ -148,14 +148,16 @@ int		allocateInfo(char *fileName, char** dimXY, char* info)
  *	the proper data.
  *
  */
-int**	makeMap(char* dim, int fd)
+int**	makeMap(char* dim, int fd, char* info)
 {
 	char buf;
 	int **map;
 	int x;
 	int y;
 	t_cords* points;
+	int i;
 
+	i = 0;
 	x = 0;
 	y = 0;
 	buf = '\0';
@@ -170,9 +172,12 @@ int**	makeMap(char* dim, int fd)
 			y++;
 			x = 0;
 		}
-		else if(buf == '1')
+		if (buf == info[3])
 		{
-			points[
+			points[i].x = x;
+			points[i++].y = y;
+		}
+		else if (buf == info[4])
 			map[y][x++] = buf
 	}
 	
