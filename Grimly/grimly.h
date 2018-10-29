@@ -6,7 +6,7 @@
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 15:56:35 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/10/24 16:08:35 by jcrisp           ###   ########.fr       */
+/*   Updated: 2018/10/29 00:22:29 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,11 @@ int		ft_isdigit(int c);
 char	*ft_strcpy(char *dst, const char *src);
 void	ft_strclr(char *s);
 int		specLine(int fd);
+int**	makeMap(char* dim, int fd, char* info);
+int* 	setDimensions(char* dim);
+int*	setInfo(char** dim, char* info, char* fileName);
+void	allocMap(char** map, int* dim);
+void	allocPoints(int** map, int* dim);
+int		allocateInfo(char *fileName, char** dimXY, char* info);
 
 #endif
