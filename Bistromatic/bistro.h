@@ -28,6 +28,7 @@ struct	n_list
 	struct n_list *next;
 };
 
+int		ft_isOp(char c);
 int		basePos(char c, char* base);
 int		ft_atoi(char* number);
 int		ft_isdigit(char n);
