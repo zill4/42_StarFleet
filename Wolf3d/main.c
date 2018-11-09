@@ -39,26 +39,28 @@ void ft_putstr(char *str)
 	while (str[i])
 		ft_putchar(str[i++]);
 }
-int  deal_key(int key, void *mstack)
+int  deal_key(int key, void *param)
 {
+	float *val;
+	*val = 0.0;
 	ft_putchar('X');
 	if (key == 126){
 		ft_putstr("up\n");
-		return (1);	
+		*val = 1.0;
 	}
 	else if (key == 124){
 		ft_putstr("right\n");
-		return (2);
+		*val = .5;
 	}
 	else if (key == 125){
 		ft_putstr("down\n");
-		return (-1);
+		*val  = -1.0;
 	}
 	else if (key == 123){
 		ft_putstr("left\n");
-		return (-2);	
+		*val = -.5;
 	}
-
+	param = (void*)val;
 	return (0);
 }
 void	cast(void *mlx, void *window, float x_pos, float y_pos)
@@ -96,12 +98,12 @@ int main()
 	//void *window;
 
 	int i = 0;
-	int c = 0;
+	float c = 0.0;
 	//mlx = mlx_init();
 	//window = mlx_new_window(mlx, 1000, 1000, "Map Maker");
 	//mlx_pixel_put(mlx, window, 500, 500, 663);		
-	mlx_key_hook(mstack->window, deal_key, (void*)0);
-	
+	mlx_key_hook(mstack->window, deal_key, &c);
+	printf("data: %f\n",c);
 	mlx_loop(mstack->mlx);
 	return (0);
 }
