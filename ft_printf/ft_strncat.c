@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 19:11:29 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/11/09 19:13:58 by jcrisp           ###   ########.fr       */
+/*   Created: 2018/11/09 16:16:29 by jcrisp            #+#    #+#             */
+/*   Updated: 2018/11/09 16:16:58 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
 
-int main()
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	int test;
-	test = INT_MAX;
+	int i;
+	int k;
 
-	printf("Hello Wordld, %d %10d\n",test,test);
-	ft_printf("Hello Wordld, %d %10d\n",test,test);
-	return (0);
+	k = 0;
+	i = ft_strlen(s1);
+	while (s2[k] && k < (int)n)
+		s1[i++] = s2[k++];
+	s1[i] = '\0';
+	return (s1);
 }

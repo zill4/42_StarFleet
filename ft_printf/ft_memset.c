@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 19:11:29 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/11/09 19:13:58 by jcrisp           ###   ########.fr       */
+/*   Created: 2018/11/09 17:03:09 by jcrisp            #+#    #+#             */
+/*   Updated: 2018/11/09 17:03:25 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
 
-int main()
+void	*ft_memset(void *b, int c, size_t len)
 {
-	int test;
-	test = INT_MAX;
+	char *ptr;
 
-	printf("Hello Wordld, %d %10d\n",test,test);
-	ft_printf("Hello Wordld, %d %10d\n",test,test);
-	return (0);
+	ptr = (char*)b;
+	while (len--)
+		*ptr++ = c;
+	return (b);
 }

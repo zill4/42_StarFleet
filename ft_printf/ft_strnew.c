@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoib.c                                         :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/08 16:23:06 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/10/08 16:25:24 by jcrisp           ###   ########.fr       */
+/*   Created: 2018/11/09 16:19:48 by jcrisp            #+#    #+#             */
+/*   Updated: 2018/11/09 16:20:04 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_atoib(long value, int base, int *count)
+char	*ft_strnew(size_t size)
 {
-	long div_c;
-	long mod_c;
+	char	*str;
+	int		i;
 
-	div_c = value / base;
-	mod_c = value % base;
-	if (value == 0)
-		return ;
-	value = div_c;
-	ft_atoib(value, base, count);
-	if (mod_c >= 10 && base > 10)
-		ft_putchar((mod_c % 10) + 'a', count);
-	else
-		ft_putnbr(mod_c, count);
+	i = 0;
+	str = (char*)ft_memalloc(sizeof(char) * size + 1);
+	if (!str)
+		return (NULL);
+	ft_bzero(str, size + 1);
+	return (str);
 }

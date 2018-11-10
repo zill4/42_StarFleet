@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 19:11:29 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/11/09 19:13:58 by jcrisp           ###   ########.fr       */
+/*   Created: 2018/11/09 16:57:56 by jcrisp            #+#    #+#             */
+/*   Updated: 2018/11/09 16:59:30 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
 
-int main()
+void	*ft_memalloc(size_t size)
 {
-	int test;
-	test = INT_MAX;
+	void *mem;
 
-	printf("Hello Wordld, %d %10d\n",test,test);
-	ft_printf("Hello Wordld, %d %10d\n",test,test);
-	return (0);
+	mem = (void *)malloc(sizeof(void) * size);
+	if (!mem || !size)
+		return (NULL);
+	ft_bzero(mem, size);
+	return (mem);
 }

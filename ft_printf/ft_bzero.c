@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 19:11:29 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/11/09 19:13:58 by jcrisp           ###   ########.fr       */
+/*   Created: 2018/11/09 16:56:39 by jcrisp            #+#    #+#             */
+/*   Updated: 2018/11/09 16:56:51 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
 
-int main()
+void	ft_bzero(void *s, size_t n)
 {
-	int test;
-	test = INT_MAX;
-
-	printf("Hello Wordld, %d %10d\n",test,test);
-	ft_printf("Hello Wordld, %d %10d\n",test,test);
-	return (0);
+	ft_memset(s, 0, n);
 }
