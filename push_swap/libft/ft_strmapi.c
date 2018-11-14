@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcrisp <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 16:55:36 by jcrisp            #+#    #+#             */
-/*   Updated: 2018/11/12 16:56:45 by jcrisp           ###   ########.fr       */
+/*   Created: 2018/10/05 02:57:10 by jcrisp            #+#    #+#             */
+/*   Updated: 2018/10/08 14:56:11 by jcrisp           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-
-
-int		main(int argc, char** argv)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	unsigned	i;
+	char		*nstr;
 
-	return (0);
-
+	i = 0;
+	nstr = ft_strnew(ft_strlen((char*)s));
+	if (!nstr)
+		return (NULL);
+	while (s[i])
+	{
+		nstr[i] = f(i, s[i]);
+		i++;
+	}
+	nstr[i] = '\0';
+	return (nstr);
 }
