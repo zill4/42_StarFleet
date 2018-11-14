@@ -13,6 +13,51 @@
 #include "./include/swap.h"
 
 
+void sa()
+{
+
+}
+void sb()
+{
+
+}
+void ss()
+{
+
+}
+void pa()
+{
+
+}
+void pb()
+{
+
+}
+void ra()
+{
+
+}
+void rb()
+{
+
+}
+void rr()
+{
+
+}
+void rra()
+{
+
+}
+void rrb()
+{
+
+}
+void rrr()
+{
+
+}
+
 /*	void pushNum(int num, t_list *list)
  *	PARAMS
  *		num: Integer to be added to list.
@@ -104,7 +149,33 @@ void	readArgs(int argc, char** args, t_list **list)
 	
 }
 
-
+void	checkFunk(char *flags)
+{
+	//Functions Sa, Sb, Ss, pa, pb, ra, rb, rr, rra, rrb, rrr
+	static void (*pf[])(void) = {sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr };
+	if (ft_strcmp("sa",flags) == 0)
+		pf[0];
+	else if (ft_strcmp("sb",flags) == 0)
+		pf[1];
+	else if (ft_strcmp("ss",flags) == 0)
+		pf[2];
+	else if (ft_strcmp("pa",flags) == 0)
+		pf[3];
+	else if (ft_strcmp("pb",flags) == 0)
+		pf[4];
+	else if (ft_strcmp("ra",flags) == 0)
+		pf[5];
+	else if (ft_strcmp("rb",flags) == 0)
+		pf[6];
+	else if (ft_strcmp("rr",flags) == 0)
+		pf[7];
+	else if (ft_strcmp("rra",flags) == 0)
+		pf[8];
+	else if (ft_strcmp("rrb",flags) == 0)
+		pf[9];
+	else if (ft_strcmp("rrr",flags) == 0)
+		pf[10];
+}
 
 int		main(int argc, char** argv)
 {
